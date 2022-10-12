@@ -3,8 +3,8 @@
 
 Stats Statistics::ComputeStatistics(const std::vector<float>& vec) {
     //Implement statistics here
-    stats s;
-    int i;
+     Stats s;
+    float i;
     float sum=0,max=0,min=0;
     if(vec.size()==0)
     {
@@ -14,15 +14,16 @@ Stats Statistics::ComputeStatistics(const std::vector<float>& vec) {
     }
     else
     {
-        s.max=vec[0];
-        s.min=vec[0];
-        for(i = vec.begin(); i != vec.end(); ++i)
+        max=vec[0];
+        min=vec[0];
+        for(i = 0; i != vec.size(); ++i)
          {
-            sum+=i;
-            if(min>i)
-                min=i;
-            if(max<i)
-                max=i;
+            
+            sum+=vec[i];
+            if(min>vec[i])
+                min=vec[i];
+            if(max<vec[i])
+                max=vec[i];
           }
         s.average =sum/vec.size();
         s.max=max;
