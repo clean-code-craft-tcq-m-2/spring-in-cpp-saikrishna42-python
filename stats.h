@@ -13,6 +13,9 @@ class EmailAlert
     {
         public:int ledGlows=1;
     };
+class IAlerter
+{
+};
 namespace Statistics {
     Stats ComputeStatistics(const std::vector<float>& );
     
