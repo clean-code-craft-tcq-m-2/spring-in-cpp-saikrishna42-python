@@ -5,6 +5,14 @@ class Stats
                float max=0;
                float min=0;
     };
+class EmailAlert 
+    {
+        public:int emailSent=1;
+    };
+    class LEDAlert 
+    {
+        public:int ledGlows=1;
+    };
 namespace Statistics {
     Stats ComputeStatistics(const std::vector<float>& );
     
