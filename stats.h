@@ -5,11 +5,16 @@ class Stats
                float max=0;
                float min=0;
     };
-class EmailAlert 
+class IAlerter
+{
+    public: void alerters ();
+}
+class EmailAlert : public IAlerter
     {
         public:int emailSent=1;
+        
     };
-    class LEDAlert 
+    class LEDAlert : public IAlerter
     {
         public:int ledGlows=1;
     };
