@@ -33,18 +33,18 @@ class StatsAlerter {
     std::vector<IAlerter*> m_alert;
     
     // constructor
-    StatsAlerter(const float maxThreshold, std::vector<IAlerter*> alerter) 
+    StatsAlerter(const float maxThreshold, std::vector<IAlerter*> alerters) 
     {maxT = maxThreshold; 
-      m_alert = alerter;}
+      m_alert = alerters;}
     
     void checkAndAlert(std::vector<float> vals ) 
     {
         auto comStat = Statistics::ComputeStatistics(vals);
         if (comStat.max > maxT)
         {
-            for (size_t i = 0; i < m_alert.size(); i++)
+            for (size_t i = 0; i < alerters.size(); i++)
         {
-            m_alert.at(i)->alert();
+            m_alert.at(i)->alerters();
         }
         }
 //         maxe = vals.at(0);
