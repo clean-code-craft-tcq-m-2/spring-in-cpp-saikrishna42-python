@@ -27,7 +27,6 @@ class EmailAlert : public IAlerter
         }
     };
 
-};
 
 namespace Statistics {
     Stats ComputeStatistics(const std::vector<float>& );
