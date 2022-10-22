@@ -47,7 +47,7 @@ class StatsAlerter
         auto comStat = Statistics::ComputeStatistics(vals);
         if (comStat.max > maxT)
         {
-            for (size_t i = 0; i < alerters.size(); i++)
+            for (size_t i = 0; i < m_alert.size(); i++)
             {
                 m_alert.at(i)->alerters();
             }
