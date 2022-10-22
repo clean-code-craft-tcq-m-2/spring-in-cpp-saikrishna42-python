@@ -5,6 +5,60 @@
 
 #include <cmath>
 
+
+class IAlerter
+{
+    public: void alerters ()
+        {
+        
+        }
+};
+class EmailAlert : public IAlerter
+    {
+        public:int emailSent=1;
+        void alerters()
+        {
+             
+        }
+        
+    };
+    class LEDAlert : public IAlerter
+    {
+        public:int ledGlows=1;
+        void alerters()
+        {
+             
+        }
+    };
+
+class StatsAlerter
+{
+    public:
+    float maxT;
+
+    std::vector<IAlerter*> m_alert;
+    
+    // constructor
+    StatsAlerter(const float maxThreshold, std::vector<IAlerter*> alerters) 
+    {
+        maxT = maxThreshold; 
+        m_alert = alerters;
+    }
+    
+    void checkAndAlert(std::vector<float> vals ) 
+    {
+        auto comStat = Statistics::ComputeStatistics(vals);
+        if (comStat.max > maxT)
+        {
+            for (size_t i = 0; i < m_alert.size(); i++)
+            {
+                m_alert.at(i)->alerters();
+            }
+        }
+
+    }
+};
+    
 TEST_CASE("reports average, minimum and maximum") {
     auto computedStats = Statistics::ComputeStatistics({1.5, 8.9, 3.2, 4.5});
     float epsilon = 0.001;
