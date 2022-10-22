@@ -8,7 +8,10 @@
 
 class IAlerter
 {
-    public: void alerters ();
+    public: void alerters ()
+        {
+        
+        }
 };
 class EmailAlert : public IAlerter
     {
