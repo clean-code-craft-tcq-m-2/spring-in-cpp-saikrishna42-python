@@ -13,12 +13,7 @@ class EmailAlert
     {
         public:int ledGlows=1;
     };
-class IAlerter
-{
-    public:
-    EmailAlert emailAlert;
-    LEDAlert   ledAlert;
-};
+
 namespace Statistics {
     Stats ComputeStatistics(const std::vector<float>& );
     
