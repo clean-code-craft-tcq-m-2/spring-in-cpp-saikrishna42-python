@@ -12,11 +12,19 @@ class IAlerter
 class EmailAlert : public IAlerter
     {
         public:int emailSent=1;
+        void alerters()
+        {
+             
+        }
         
     };
     class LEDAlert : public IAlerter
     {
         public:int ledGlows=1;
+        void alerters()
+        {
+             
+        }
     };
 class StatsAlerter {
     public:
